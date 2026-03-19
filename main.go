@@ -216,8 +216,8 @@ func main() {
 
 	launcherFlags := flag.NewFlagSet("launcher", flag.ContinueOnError)
 
-	address := launcherFlags.String("address", "127.0.0.1", "dashboard address")
-	controlAddress := launcherFlags.String("control-address", "127.0.0.1", "server control address")
+	address := launcherFlags.String("address", "0.0.0.0", "dashboard address")
+	controlAddress := launcherFlags.String("control-address", "0.0.0.0", "server control address")
 	portFlag := launcherFlags.Int("port", 8080, "dashboard port")
 	controlPort := launcherFlags.Int("control-port", 9090, "server control port")
 
