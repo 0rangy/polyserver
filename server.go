@@ -432,7 +432,7 @@ func runServer() {
 		})
 	})
 
-	addr := ":" + strconv.Itoa(*controlPort)
+	addr := "127.0.0.1:" + strconv.Itoa(*controlPort)
 
 	go func() {
 		log.Println("Control API running on", addr)
