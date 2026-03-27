@@ -11,7 +11,7 @@ If the right binary for your system is not there, you can also build the server 
 ### Tracks
 The server looks for tracks inside the `tracks` folder inside the working directory in the form of `.track` files. `.track` files are just raw text files containing a track code
 
-You can download the `.track` files for the official and community tracks from https://github.com/polytrackmods/polyserver-go/tree/main/tracks
+You can grab the .track files for the official and community tracks from the releases page
 
 In the end, the folder structure should look something like this:
 ```
