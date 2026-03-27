@@ -34,6 +34,6 @@ In the end, the folder structure should look something like this:
 ### Running the Server
 To run the server, simply run the binary you just downloaded
 #### Launch options
-`port`: the port the server management dashboard runs on. Default is `8080`.
-`control-port`: the port the control server runs on. Default is `9090`.
+`port`: the port the server management dashboard runs on. Default is `8080`.  
+`control-port`: the port the control server runs on. Default is `9090`.  
 `address`: The address the web frontend binds to. If you want the frontend to only be available to the host, either ignore this or set it to `127.0.0.1`. If you want the frontend to bind to all addresses, set this to `0.0.0.0`. Default is `127.0.0.1`.
