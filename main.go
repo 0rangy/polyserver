@@ -5,6 +5,7 @@ import (
 	"flag"
 	"fmt"
 	"io"
+	"io/fs"
 	"log"
 	"net/http"
 	"os"
@@ -13,6 +14,7 @@ import (
 	"time"
 
 	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/filesystem"
 )
 
 func proxyJSON(c *fiber.Ctx, method, url string) error {
@@ -103,7 +105,13 @@ func startSupervisorDashboard(port int, cmd *exec.Cmd, controlPort int, address 
 
 	app := fiber.New()
 
-	app.Static("/", "./web")
+	subFS, err := fs.Sub(webFiles, "web")
+	if err != nil {
+		log.Fatal("Failed to create web sub-filesystem:", err)
+	}
+	app.Use("/", filesystem.New(filesystem.Config{
+		Root: http.FS(subFS),
+	}))
 
 	app.Get("/api/server/status", func(c *fiber.Ctx) error {
 		running := cmd.ProcessState == nil
