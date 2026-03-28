@@ -1,0 +1,28 @@
+[
+    {
+        "DisplayName": "Web frontend Port",
+        "Category": "Port",
+        "Description": " the port the server management dashboard binds to",
+        "Keywords": "Port",
+        "FieldName": "port",
+        "InputType": "number",
+        "IsFlagArgument": false,
+        "ParamFieldName": "port",
+        "IncludeInCommandLine": true,
+        "DefaultValue": "8080",
+        "EnumValues": {}
+    },
+    {
+        "DisplayName": "Control server port",
+        "Category": "Port",
+        "Description": "The port that the control server binds to",
+        "Keywords": "Port",
+        "FieldName": "control-port",
+        "InputType": "number",
+        "IsFlagArgument": false,
+        "ParamFieldName": "control-port",
+        "IncludeInCommandLine": true,
+        "DefaultValue": "9090",
+        "EnumValues": {}
+    }
+]
