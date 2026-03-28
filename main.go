@@ -78,8 +78,7 @@ func runLauncher(port int, controlPort int, address string, controlAddress strin
 	stdout, _ := cmd.StdoutPipe()
 	stderr, _ := cmd.StderrPipe()
 
-	cmd.Stdin = os.Stdin
-
+	// stdin is NOT forwarded to the subprocess — the launcher owns it for the console
 	if err := cmd.Start(); err != nil {
 		log.Fatal(err)
 	}
@@ -95,6 +94,8 @@ func runLauncher(port int, controlPort int, address string, controlAddress strin
 		err := cmd.Wait()
 		log.Println("Server exited:", err)
 	}()
+
+	go startConsole(controlPort, controlAddress, cmd)
 
 	select {}
 
